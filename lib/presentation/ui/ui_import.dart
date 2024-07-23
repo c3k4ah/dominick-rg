@@ -1,0 +1,9 @@
+export 'about_part.dart';
+export 'background_pattern.dart';
+export 'banner.dart';
+export 'footer_part.dart';
+export 'hackathon_part.dart';
+export 'project_part.dart';
+export 'skills_part.dart';
+export 'timeline_widget.dart';
+export 'app_drawer.dart';
