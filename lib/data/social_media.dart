@@ -24,7 +24,7 @@ List<SMediaModel> reseauxListe = [
   ),
   SMediaModel(
     name: 'Behance',
-    link: 'https://www.behance.net/dominicrandria',
+    link: 'https://www.behance.net/dominick-rg',
     icon: imageAsset.behance,
     bgColor: Colors.white,
   ),
