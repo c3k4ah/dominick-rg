@@ -1,5 +1,5 @@
-name: web_portfolio
-description: A new Flutter project.
+name: dominick
+description: Découvrez mes projets, compétences et réalisations dans le développement mobile flutter.
 
 publish_to: none # Remove this line if you wish to publish to pub.dev
 
@@ -15,19 +15,16 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   google_fonts: ^6.2.0
-  device_preview: ^1.1.0
   flutter_svg: ^2.0.10+1
   scroll_to_index: ^3.0.1
   marquee_list: ^1.0.0
-  dotted_line: ^3.2.2
   mobkit_dashed_border: ^0.0.6
   timeline_tile: ^2.0.0
+  url_launcher: ^6.2.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-
   flutter_lints: ^2.0.0
   
 

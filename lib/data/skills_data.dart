@@ -20,18 +20,18 @@ List<SkillModel> skillList = [
   SkillModel(
     title: 'pocketBase',
     asset: imageAsset.pocketBase,
-    percent: 40,
+    percent: 55.6,
     isPng: true,
   ),
   SkillModel(
     title: 'firebase',
     asset: imageAsset.firebase,
-    percent: 65,
+    percent: 70,
   ),
   SkillModel(
     title: 'osint',
     asset: imageAsset.osint,
-    percent: 45,
+    percent: 35,
     isPng: true,
   ),
   SkillModel(
@@ -52,6 +52,6 @@ List<SkillModel> skillList = [
   SkillModel(
     title: 'ps',
     asset: imageAsset.photoshop,
-    percent: 50,
+    percent: 60,
   ),
 ];

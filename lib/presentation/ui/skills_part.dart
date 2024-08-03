@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:web_portfolio/core/constants/colors.dart';
-import 'package:web_portfolio/shared/skill_model.dart';
 
+import '../../core/constants/colors.dart';
 import '../../core/responsibility/responsive_behavior.dart';
+import '../../core/utils/default_img_loading.dart';
 import '../../data/skills_data.dart';
+import '../../shared/skill_model.dart';
 import '../widgets/big_title_widget.dart';
 
 class SkillsPart extends StatelessWidget {
@@ -78,7 +78,7 @@ class SkillsPart extends StatelessWidget {
         children: [
           const BigTitleWidget(
             title: "Skills",
-            subtitle: "Mes compétences et outils de développement.",
+            subtitle: "My skills and development tools.",
           ),
           Expanded(
             child: SizedBox(
@@ -172,8 +172,8 @@ class SkillsPart extends StatelessWidget {
                   ),
                 )),
             child: (skill.isPng ?? false) == false
-                ? SvgPicture.asset(
-                    skill.asset,
+                ? SvgWidgetPlaceholder(
+                    asset: skill.asset,
                     fit: BoxFit.fitHeight,
                     colorFilter: const ColorFilter.mode(
                       Colors.black,

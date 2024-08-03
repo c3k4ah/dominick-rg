@@ -10,6 +10,7 @@ List<String> bannerTextList = [
     'Flutter developer',
     'it student',
     'designer',
+    'OSINT Analyst',
     'freelancer',
   ]
 ];
@@ -29,7 +30,6 @@ class BannerWidget extends StatelessWidget {
         desktop: 4,
       ),
     );
-    // TODO: BANNER
     return SizedBox(
       // color: Colors.grey.withOpacity(.2),
       width: double.infinity,
@@ -61,8 +61,9 @@ class BannerWidget extends StatelessWidget {
             ),
             child: MarqueeList(
               scrollDirection: Axis.horizontal,
+              scrollDuration: const Duration(seconds: 2),
               children: List.generate(
-                growable: true,
+                growable: false,
                 bannerTextList.length,
                 (index) {
                   return Row(

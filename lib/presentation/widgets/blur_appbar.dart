@@ -8,9 +8,11 @@ import 'blur_container.dart';
 
 class BlurAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Function()? onTapMenu;
+  final Function(int id) onTapItem;
   const BlurAppBar({
     super.key,
     this.onTapMenu,
+    required this.onTapItem,
   });
   @override
   Size get preferredSize => const Size.fromHeight(100);
@@ -48,24 +50,31 @@ class BlurAppBar extends StatelessWidget implements PreferredSizeWidget {
           const Spacer(),
           if (isNotMobile) ...[
             ActionMenuButton(
-              title: 'Projets',
-              onTap: () {},
+              title: 'About',
+              onTap: () => onTapItem(0),
             ),
             ActionMenuButton(
-              title: 'Expériences',
-              onTap: () {},
+              title: 'Projects',
+              onTap: () => onTapItem(2),
+            ),
+            ActionMenuButton(
+              title: 'Experiences',
+              onTap: () => onTapItem(3),
             ),
             ActionMenuButton(
               title: 'Skills',
-              onTap: () {},
+              onTap: () => onTapItem(4),
             ),
             ActionMenuButton(
-              title: 'Hackathons',
-              onTap: () {},
+              title: 'Awards',
+              onTap: () => onTapItem(5),
+            ),
+            const SizedBox(
+              width: 20,
             ),
             ActionMenuButton(
-              title: 'Mes contacts',
-              onTap: () {},
+              title: 'Contacts',
+              onTap: () => onTapItem(6),
               addBackground: true,
             ),
           ],

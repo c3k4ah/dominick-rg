@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mobkit_dashed_border/mobkit_dashed_border.dart';
-import 'package:web_portfolio/core/constants/colors.dart';
 
+import '../../core/constants/colors.dart';
+import '../../core/responsibility/responsive_behavior.dart';
+import '../../core/utils/default_img_loading.dart';
 import '../widgets/action_menu_button.dart';
 
 class AppDrawer extends StatelessWidget {
   final Function()? onCloseMenu;
-  const AppDrawer({super.key, this.onCloseMenu});
+  final Function(int id) onTapItem;
+  const AppDrawer({super.key, this.onCloseMenu, required this.onTapItem});
 
   @override
   Widget build(BuildContext context) {
@@ -35,29 +38,58 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
             ActionMenuButton(
-              title: 'A-propos',
-              onTap: () {},
+              title: 'About',
+              onTap: () => onTapItem(0),
             ),
             ActionMenuButton(
-              title: 'Projets',
-              onTap: () {},
-              isSelected: true,
+              title: 'Projects',
+              onTap: () => onTapItem(2),
             ),
             ActionMenuButton(
-              title: 'Expériences',
-              onTap: () {},
+              title: 'Experiences',
+              onTap: () => onTapItem(3),
             ),
             ActionMenuButton(
               title: 'Skills',
-              onTap: () {},
+              onTap: () => onTapItem(4),
             ),
             ActionMenuButton(
-              title: 'Hackathons',
-              onTap: () {},
+              title: 'Awards',
+              onTap: () => onTapItem(5),
             ),
             ActionMenuButton(
-              title: 'Mes contacts',
-              onTap: () {},
+              title: 'Contacts',
+              onTap: () => onTapItem(6),
+            ),
+            const Spacer(),
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width,
+              child: Center(
+                child: Column(
+                  children: [
+                    Text(
+                      'Dodo zaza !!',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: ResponsiveSize.number(
+                          context: context,
+                          mobile: 10,
+                          tablet: 10,
+                          mobileLarge: 10,
+                          desktop: 15,
+                        ),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SvgWidgetPlaceholder(
+                      asset: 'assets/images/sleep.svg',
+                      fit: BoxFit.fitHeight,
+                      width: MediaQuery.sizeOf(context).width,
+                      height: 200,
+                    )
+                  ],
+                ),
+              ),
             ),
           ],
         ),

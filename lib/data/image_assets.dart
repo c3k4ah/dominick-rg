@@ -1,9 +1,7 @@
-// import 'package:flutter/foundation.dart';
-
 final ImageAssets imageAsset = ImageAssets();
 
 class ImageAssets {
-  String directory = 'assets/'; //!(kIsWeb) ? 'assets/' : '';
+  String directory = 'assets/';
 
   //logos
   String get inonia => '${directory}logo/ibonia.png';
@@ -49,43 +47,3 @@ class ImageAssets {
       '${directory}images/hackathon_zahageek_2023.jpg';
   String get defaultImage => '${directory}images/default_image.webp';
 }
-
-/**
-  assets:
-    - assets/
-    - assets/images/
-    - assets/icon/
-    - assets/logo/
-    - assets/images/angry.webp
-    - assets/images/sample.png
-    - assets/icon/team.svg
-    - assets/icon/project.svg
-    - assets/icon/cup.svg
-    - assets/icon/calendar.svg
-    - assets/icon/mouse_icon.svg
-    - assets/logo/ibonia.png
-    - assets/logo/areaTech.png
-    - assets/logo/myagency.png
-    - assets/logo/google.png
-    - assets/logo/esti.png
-    - assets/logo/mybn.png
-    - assets/logo/mvola.png
-    - assets/logo/zahageek.png
-    - assets/logo/iteams.png
-    - assets/images/cekah.png
-    - assets/images/cher_project.jpg
-    - assets/images/designer_project.jpeg
-    - assets/images/dev_project.jpg
-    - assets/images/dekoa.png
-    - assets/images/mozika.png
-    - assets/images/rakitra.png
-    - assets/images/gfs.png
-    - assets/images/buildeo.png
-    - assets/images/avg.png
-    - assets/icons/team.svg
-    - assets/icons/project.svg
-    - assets/icons/cup.svg
-    - assets/icons/calendar.svg
-    - assets/icons/mouse_icon.svg
-
- */

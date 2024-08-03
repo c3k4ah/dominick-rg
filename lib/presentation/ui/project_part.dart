@@ -1,10 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constants/colors.dart';
 import '../../core/responsibility/responsive_behavior.dart';
+import '../../core/utils/default_img_loading.dart';
+import '../../core/utils/url_navigate.dart';
 import '../../data/data.dart';
 import '../widgets/big_title_widget.dart';
 import '../../shared/project_model.dart';
@@ -79,9 +80,8 @@ class ProjectPart extends StatelessWidget {
       child: Column(
         children: [
           const BigTitleWidget(
-            title: "Mes projets",
-            subtitle:
-                "Mes projets personnels qui démontrent mes connaissances.",
+            title: "My projects",
+            subtitle: "My personal projects that demonstrate my knowledge.",
           ),
           Expanded(
             child: SizedBox(
@@ -201,7 +201,8 @@ class ProjectPart extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     InkWell(
-                                      onTap: () {},
+                                      onTap: () =>
+                                          launchMyUrl(project.urlProject),
                                       child: Container(
                                         height: ResponsiveSize.number(
                                           context: context,
@@ -223,8 +224,9 @@ class ProjectPart extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        child: SvgPicture.asset(
-                                          'assets/icons/${project.type}.svg',
+                                        child: SvgWidgetPlaceholder(
+                                          asset:
+                                              'assets/icons/${project.type}.svg',
                                           fit: BoxFit.fitHeight,
                                           colorFilter: const ColorFilter.mode(
                                               Colors.black, BlendMode.srcIn),

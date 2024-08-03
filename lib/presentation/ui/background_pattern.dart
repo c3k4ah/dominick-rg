@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/responsibility/responsive_behavior.dart';
+import '../../core/utils/default_img_loading.dart';
 
 class BackGroundPattern extends StatelessWidget {
   final Widget child;
@@ -20,8 +20,8 @@ class BackGroundPattern extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           SizedBox(
-            child: SvgPicture.asset(
-              'assets/images/bg_pattern.svg',
+            child: SvgWidgetPlaceholder(
+              asset: 'assets/images/bg_pattern.svg',
               fit: isNotMobile ? BoxFit.fitWidth : BoxFit.none,
               colorFilter:
                   const ColorFilter.mode(Colors.white, BlendMode.srcIn),

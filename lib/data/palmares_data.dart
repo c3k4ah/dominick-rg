@@ -1,57 +1,57 @@
 import '../shared/palmares_model.dart';
 import 'image_assets.dart';
 
-List<HackathonDataModel> palmaresList = [
+List<HackathonDataModel> awardsList = [
   HackathonDataModel(
-    rank: "1er PLACE",
+    rank: "1st PLACE",
     institutLogo: imageAsset.esti,
     urlImage: imageAsset.hackathonEsti2021,
     description:
-        "Création d'un logiciel Photobooth avec python, tkinter durant la piscine d'intégration ",
+        "Development of a Photobooth software using Python and Tkinter during an integration pool session",
     urlPost:
         'https://www.facebook.com/share/p/RigBued4TYWWfGRD/?mibextid=xfxF2i',
   ),
   HackathonDataModel(
-    rank: "1er PLACE",
+    rank: "1st PLACE",
     institutLogo: imageAsset.mybn,
     urlImage: imageAsset.hackathonMybn2021,
     description:
-        "Application Multiplatforme avec le framework Flutter durant le Hackathon 2021 organiser par Malagasy YBN",
+        "Multi-platform application developed using the Flutter framework during the 2021 Hackathon organized by Malagasy YBN",
     urlPost:
         'https://www.facebook.com/share/p/xojg3f9paS1nE2N3/?mibextid=oFDknk',
   ),
   HackathonDataModel(
-    rank: "3ème PLACE",
+    rank: "3rd PLACE",
     institutLogo: imageAsset.devFest,
     urlImage: imageAsset.hackathonDevFest2021,
     description:
-        "Réalisation d'un projet de gestion de permis de construction,tout en une seule plateforme et en un seul projet.",
+        "Project for managing building permits, all in one platform and project.",
     urlPost: 'https://www.facebook.com/share/Tesoeg1DnwD7tb9M/?mibextid=oFDknk',
   ),
   HackathonDataModel(
-    rank: "2ème PLACE",
+    rank: "2nd PLACE",
     institutLogo: imageAsset.mhackMvola,
     urlImage: imageAsset.hackathonMvola2022,
     description:
-        "Projet e-commerce (app mobile ,bot ,web) qui utilise l'API Mvola.",
+        "E-commerce project (mobile app, bot, web) utilizing the Mvola API.",
     urlPost:
         'https://www.facebook.com/share/p/t1hgF7vvgDb3PpH5/?mibextid=oFDknk',
   ),
   HackathonDataModel(
-    rank: "1er PLACE",
+    rank: "1st PLACE",
     urlImage: imageAsset.hackathonDevFest2022,
     institutLogo: imageAsset.devFest,
     description:
-        "Réalisation d'un application permettant de calibrer les déchets d'Antananarivo.",
+        "Development of an application for calibrating Antananarivo waste.",
     urlPost:
         'https://www.facebook.com/share/p/BRGbiDNcHj8MShok/?mibextid=oFDknk',
   ),
   HackathonDataModel(
-      rank: "1er PLACE",
+      rank: "1st PLACE",
       institutLogo: imageAsset.zahageek,
       urlImage: imageAsset.hackathonZahaGeek,
       description:
-          "Une plateforme développée par la team Angivy afin d'apporter une solution au numérique pour les enfants.",
+          "A platform developed by the Angivy team to bring digital solutions for children.",
       urlPost:
           'https://www.facebook.com/share/p/nBXrwuy53QG5Y5hi/?mibextid=oFDknk'),
 ];

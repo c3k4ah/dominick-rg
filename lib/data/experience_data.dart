@@ -6,31 +6,29 @@ List<ExpsModel> experienceList = [
     isActive: true,
     institut: "Freelance",
     location: 'Remote',
-    title: "Développeur Flutter",
+    title: "Flutter Developer",
     date: "${DateTime.now().year}",
     projects: [
       ProjectDescriptionModel(
-        title: "Application de rencontre",
+        title: "Dating App",
         tasks: [
-          // "Développement et Conception",
-          "Redaction des spécifications fonctionnelles",
-          "Intégration de l'API PocketBase",
-          "Adoption de la methode Agile",
-          // "Intégration du design",
+          "Functional specifications drafting",
+          "Integration of PocketBase API",
+          "Adoption of Agile methodology",
         ],
         skills: [
           "Flutter",
           "Clean Architecture",
           "PocketBase framework",
         ],
-        others: "Livraison d'une MVP chaque Sprint",
+        others: "Delivery of an MVP every Sprint",
       ),
       ProjectDescriptionModel(
-        title: "Logiciel de bibliothèque numérique",
+        title: "Digital Library Software",
         isMobilePlatform: false,
         tasks: [
-          "Développement de l'application pour Windows",
-          "Intégration du design",
+          "Windows application development",
+          "Design integration",
         ],
         skills: [
           "Flutter",
@@ -38,11 +36,10 @@ List<ExpsModel> experienceList = [
         ],
       ),
       ProjectDescriptionModel(
-        title: "Application de gestion de ticket",
+        title: "Ticket Management Application",
         tasks: [
-          "Développement de l'application Android",
-          // "Intégration de l'API",
-          "Création du Design",
+          "Android application development",
+          "Design creation",
         ],
         skills: [
           "Flutter",
@@ -58,15 +55,15 @@ List<ExpsModel> experienceList = [
     institut: "MyAgency",
     urlImage: imageAsset.myAgency,
     location: 'Anjanahary',
-    title: "Développeur Flutter",
+    title: "Flutter Developer",
     date: "2023",
     projects: [
       ProjectDescriptionModel(
-        title: "Développement d'une application de gestion de commande",
+        title: "Order Management Application Development",
         tasks: [
-          "Développement de l'application Android",
-          "Intégration de l'API",
-          "Mis en place d'un systeme de tracking",
+          "Android application development",
+          "API integration",
+          "Setup of a tracking system",
         ],
         skills: [
           "Flutter",
@@ -74,10 +71,9 @@ List<ExpsModel> experienceList = [
         ],
       ),
       ProjectDescriptionModel(
-        title: "Application de collaboration et de gestion d'événements",
+        title: "Collaboration and Event Management Application",
         tasks: [
-          // "Développement de l'application Android",
-          "Intégration du design.",
+          "Design integration.",
         ],
         skills: [
           "Flutter",
@@ -92,16 +88,16 @@ List<ExpsModel> experienceList = [
     institut: "AreaTech",
     urlImage: imageAsset.areaTech,
     location: 'Avaradoha',
-    title: "Développeur Flutter",
+    title: "Flutter Developer",
     date: "2022",
     projects: [
       ProjectDescriptionModel(
-        title: "Application de reservation de voyage",
+        title: "Travel Reservation Application",
         tasks: [
-          "Développement de l'application Android",
-          "Mis en place du back-end ",
-          "Intégration de l'API",
-          "Intégration du design.",
+          "Android application development",
+          "Backend setup",
+          "API integration",
+          "Design integration.",
         ],
         skills: [
           "Flutter",
@@ -115,14 +111,14 @@ List<ExpsModel> experienceList = [
     institut: "IBONIA",
     urlImage: imageAsset.inonia,
     location: 'Ankatso',
-    title: "Stage de découverte",
+    title: "Discovery Internship",
     date: "2020",
     projects: [
       ProjectDescriptionModel(
-        title: "Application de reservation de voyage",
+        title: "Travel Reservation Application",
         tasks: [
-          "Observation du quotidient d'un développeur",
-          "Initiation au développement.",
+          "Observing a developer's daily routine",
+          "Introduction to development.",
         ],
         skills: [],
       ),

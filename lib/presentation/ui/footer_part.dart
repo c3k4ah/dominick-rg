@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:web_portfolio/core/constants/colors.dart';
 
+import '../../core/constants/colors.dart';
 import '../../core/responsibility/responsive_behavior.dart';
+import '../../core/utils/default_img_loading.dart';
+import '../../core/utils/url_navigate.dart';
 import '../../data/social_media.dart';
 import '../widgets/blur_container.dart';
 
@@ -208,7 +209,7 @@ class FooterPart extends StatelessWidget {
               desktop: 4,
             );
             return InkWell(
-              onTap: () {},
+              onTap: () => launchMyUrl(reseauxListe[index].link),
               child: Container(
                 width: size,
                 height: size,
@@ -219,11 +220,11 @@ class FooterPart extends StatelessWidget {
                   color: Colors.white,
                 ),
                 child: Center(
-                  child: SvgPicture.asset(
+                  child: SvgWidgetPlaceholder(
+                    asset: reseauxListe[index].icon,
+                    fit: BoxFit.fitHeight,
                     width: size,
                     height: size,
-                    reseauxListe[index].icon,
-                    fit: BoxFit.fitHeight,
                   ),
                 ),
               ),

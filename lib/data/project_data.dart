@@ -5,47 +5,42 @@ List<ProjectModel> projectList = [
     type: 'github',
     title: 'Portfolio v1',
     description:
-        "Il s'agit d'un portfolio que j'ai avec Flutter créé pour mettre en valeur mes compétences et mon expérience.",
+        "This is a portfolio I've created with Flutter to showcase my skills and experience.",
     urlProject: 'https://github.com/c3k4ah/dominick',
+  ),
+  ProjectModel(
+    type: 'github',
+    title: 'Portfolio v2',
+    description:
+        "Created with Flutter and compile with web components like html, js, css",
+    urlProject: 'https://github.com/c3k4ah/c3k4ah.github.io',
   ),
   ProjectModel(
     type: 'github',
     title: 'GFS',
     description:
-        "GFS est une application multiplateforme qui permet de facilement la gestion d'une maison/foyer",
+        "GFS is a multi-platform application that allows easy management of a home/household.",
     urlProject: 'https://github.com/iTeam-S/GFS',
   ),
   ProjectModel(
     type: 'github',
     title: 'My DevTeam',
     description:
-        "Développement d'une application de gestion de projet tout-en-un. Un logiciel qui permet de combiner gestion de projet et communication entre les personnel de l’entreprise.",
+        "Development of a comprehensive project management application. Software that combines project management and communication among company staff.",
     urlProject: 'https://github.com/c3k4ah/My-DevTeam',
   ),
   ProjectModel(
     type: 'behance',
-    title: 'My portfolio Design',
+    title: 'My Portfolio Design',
     description:
-        'Discover my projects, skills and achievements in  mobile development.',
+        'Explore my projects, skills, and achievements in mobile development.',
     urlProject: 'https://www.behance.net/gallery/201262635/Portfolio',
   ),
   ProjectModel(
     type: 'github',
-    title: 'Rakitra',
-    description: "Application de gestion de budget hors ligne.",
-    urlProject: 'https://github.com/c3k4ah/RAKITRA',
+    title: 'GMH API',
+    description:
+        'API for the GMH(GetMyHome) project. Simple back-end project to get familiar with Golang.',
+    urlProject: 'https://github.com/c3k4ah/gmh-api',
   ),
-  ProjectModel(
-    type: 'github',
-    title: 'Mozika',
-    description: 'Lecteur de musique pour Android',
-    urlProject: 'https://github.com/c3k4ah/mozika-2.0',
-  ),
-  // ProjectModel(
-  //   type: 'Mobile (Flutter)',
-  //   title: 'Dekoa',
-  //   description:
-  //       'Une application mobile pour aider les clients à commander de la nourriture rapidement et efficacement en ligne ou directement sur place.',
-  //   urlProject: '',
-  // ),
 ];

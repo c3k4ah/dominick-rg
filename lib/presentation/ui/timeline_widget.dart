@@ -3,8 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-import 'package:web_portfolio/core/constants/colors.dart';
 
+import '../../core/constants/colors.dart';
 import '../../core/responsibility/responsive_behavior.dart';
 import '../../data/experience_data.dart';
 import '../../shared/formation_model.dart';
@@ -39,7 +39,7 @@ class ExperienceTimeline extends StatelessWidget {
           const BigTitleWidget(
             title: "Experiences",
             subtitle:
-                "Mon expérience professionnelle, au cours desquelles j'ai eu l'opportunité de travailler avec divers entreprises.",
+                "My professional experience, gained through working with various companies, has been invaluable.",
           ),
           SizedBox(
             height: 4 *

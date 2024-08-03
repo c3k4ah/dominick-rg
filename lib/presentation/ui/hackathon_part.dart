@@ -3,10 +3,12 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:web_portfolio/core/constants/colors.dart';
 
+import '../../core/constants/colors.dart';
 import '../../core/responsibility/responsive_behavior.dart';
 import '../../core/utils/app_mixins.dart';
+import '../../core/utils/default_img_loading.dart';
+import '../../core/utils/url_navigate.dart';
 import '../../data/data.dart';
 import '../widgets/blur_container.dart';
 import '../widgets/button_widget.dart';
@@ -32,7 +34,7 @@ class _HackathonPartState extends State<HackathonPart> {
 
   void _next() {
     setState(() {
-      _selectedPhoto = (_selectedPhoto + 1) % palmaresList.length;
+      _selectedPhoto = (_selectedPhoto + 1) % awardsList.length;
       _scrollTo(_selectedPhoto);
     });
   }
@@ -40,7 +42,7 @@ class _HackathonPartState extends State<HackathonPart> {
   void _previous() {
     setState(() {
       _selectedPhoto =
-          (_selectedPhoto - 1 + palmaresList.length) % palmaresList.length;
+          (_selectedPhoto - 1 + awardsList.length) % awardsList.length;
       _scrollTo(_selectedPhoto);
     });
   }
@@ -178,9 +180,10 @@ class _HackathonPartState extends State<HackathonPart> {
           Expanded(
             child: _buildPhotoDetails(context),
           ),
-          const ButtonWidget(
+          ButtonWidget(
             color: primaryColor,
-            text: 'Voir la publication',
+            text: 'View the post',
+            onPressed: () => launchMyUrl(awardsList[_selectedPhoto].urlPost),
           ),
         ],
       ),
@@ -198,13 +201,21 @@ class _HackathonPartState extends State<HackathonPart> {
   }
 
   Widget _logoImage(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: 100,
-      decoration: BoxDecoration(
-        image: DecorationImage(
+      // decoration: BoxDecoration(
+      //   image: DecorationImage(
+      //     fit: BoxFit.fitHeight,
+      //     image: ExactAssetImage(awardsList[_selectedPhoto].institutLogo),
+      //   ),
+      // ),
+      child: Center(
+        child: ImageWidgetPlaceholder(
           fit: BoxFit.fitHeight,
-          image: ExactAssetImage(palmaresList[_selectedPhoto].institutLogo),
+          image: ExactAssetImage(
+            awardsList[_selectedPhoto].institutLogo,
+          ),
         ),
       ),
     );
@@ -232,7 +243,7 @@ class _HackathonPartState extends State<HackathonPart> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Text(
-          palmaresList[_selectedPhoto].rank,
+          awardsList[_selectedPhoto].rank,
           textAlign: TextAlign.center,
           style: TextStyle(
             color: primaryColor,
@@ -241,7 +252,7 @@ class _HackathonPartState extends State<HackathonPart> {
           ),
         ),
         Text(
-          palmaresList[_selectedPhoto].description,
+          awardsList[_selectedPhoto].description,
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.normal,
@@ -255,16 +266,24 @@ class _HackathonPartState extends State<HackathonPart> {
   Widget _buildMainImage() {
     return Expanded(
       child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25),
-          border: Border.all(width: 5, color: Colors.white),
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: ExactAssetImage(palmaresList[_selectedPhoto].urlImage),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25),
+            border: Border.all(width: 5, color: Colors.white),
+            // image: DecorationImage(
+            //   fit: BoxFit.cover,
+            //   image: ExactAssetImage(awardsList[_selectedPhoto].urlImage),
+            // ),
           ),
-        ),
-        height: double.infinity,
-      ),
+          height: double.infinity,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: ImageWidgetPlaceholder(
+              fit: BoxFit.cover,
+              image: ExactAssetImage(
+                awardsList[_selectedPhoto].urlImage,
+              ),
+            ),
+          )),
     );
   }
 
@@ -294,11 +313,11 @@ class _HackathonPartState extends State<HackathonPart> {
       margin: const EdgeInsets.symmetric(horizontal: 20),
       child: ListView.builder(
         controller: _scrollController,
-        itemCount: palmaresList.length,
+        itemCount: awardsList.length,
         scrollDirection: Axis.horizontal,
         physics: const AlwaysScrollableScrollPhysics(),
         itemBuilder: (context, index) {
-          final palmares = palmaresList[index];
+          final palmares = awardsList[index];
           return InkWell(
             onTap: () {
               setState(() {
@@ -313,9 +332,18 @@ class _HackathonPartState extends State<HackathonPart> {
                 border: index == _selectedPhoto
                     ? Border.all(width: 5, color: primaryColor)
                     : null,
-                image: DecorationImage(
+                // image: DecorationImage(
+                //   fit: BoxFit.cover,
+                //   image: ExactAssetImage(palmares.urlImage),
+                // ),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: ImageWidgetPlaceholder(
                   fit: BoxFit.cover,
-                  image: ExactAssetImage(palmares.urlImage),
+                  image: ExactAssetImage(
+                    palmares.urlImage,
+                  ),
                 ),
               ),
             ),
@@ -401,7 +429,7 @@ class _HackathonPartMobileState extends State<HackathonPartMobile>
   @override
   void initState() {
     super.initState();
-    itemCount = palmaresList.length;
+    itemCount = awardsList.length;
   }
 
   @override
@@ -458,14 +486,22 @@ class _HackathonPartMobileState extends State<HackathonPartMobile>
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
+                SizedBox(
                   width: double.infinity,
                   height: 80,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
+                  // decoration: BoxDecoration(
+                  //   image: DecorationImage(
+                  //     fit: BoxFit.fitHeight,
+                  //     image: ExactAssetImage(
+                  //       awardsList[selectedItem].institutLogo,
+                  //     ),
+                  //   ),
+                  // ),
+                  child: Center(
+                    child: ImageWidgetPlaceholder(
                       fit: BoxFit.fitHeight,
                       image: ExactAssetImage(
-                        palmaresList[selectedItem].institutLogo,
+                        awardsList[selectedItem].institutLogo,
                       ),
                     ),
                   ),
@@ -477,7 +513,7 @@ class _HackathonPartMobileState extends State<HackathonPartMobile>
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        palmaresList[selectedItem].rank,
+                        awardsList[selectedItem].rank,
                         style: TextStyle(
                           color: primaryColor,
                           fontWeight: FontWeight.w700,
@@ -491,7 +527,7 @@ class _HackathonPartMobileState extends State<HackathonPartMobile>
                         ),
                       ),
                       Text(
-                        palmaresList[selectedItem].description,
+                        awardsList[selectedItem].description,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
@@ -508,9 +544,11 @@ class _HackathonPartMobileState extends State<HackathonPartMobile>
                     ],
                   ),
                 ),
-                const ButtonWidget(
+                ButtonWidget(
                   color: primaryColor,
-                  text: 'Voir la publication',
+                  text: 'View the post',
+                  onPressed: () =>
+                      launchMyUrl(awardsList[selectedItem].urlPost),
                 ),
               ],
             ),
