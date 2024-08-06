@@ -71,6 +71,7 @@ class _HomePageState extends State<HomePage> {
       endDrawer: AppDrawer(
         onTapItem: (id) async {
           await _scrollToCounter(id);
+          HomePage.scaffoldKey.currentState?.closeEndDrawer();
         },
         onCloseMenu: () => HomePage.scaffoldKey.currentState?.closeEndDrawer(),
       ),
@@ -98,7 +99,6 @@ class _HomePageState extends State<HomePage> {
                   index: index,
                   child: Container(
                       width: MediaQuery.sizeOf(context).width,
-                      // height: MediaQuery.sizeOf(context).height,
                       margin: EdgeInsets.symmetric(
                         horizontal: (index == widgetPartList.length - 1)
                             ? 0
@@ -108,56 +108,9 @@ class _HomePageState extends State<HomePage> {
                 );
               },
             ),
-            // children: [
-            //   // Container(
-            //   //   width: MediaQuery.sizeOf(context).width,
-            //   //   // height: MediaQuery.sizeOf(context).height,
-            //   //   margin: EdgeInsets.symmetric(
-            //   //     horizontal: necessaryPadding,
-            //   //   ),
-            //   //   child: ListView(
-            //   //     // crossAxisAlignment: CrossAxisAlignment.start,
-            //   //     controller: controller,
-            //   //     children: List.generate(
-            //   //       widgetPartList.length,
-            //   //       (index) {
-            //   //         return AutoScrollTag(
-            //   //           key: ValueKey(index),
-            //   //           controller: controller,
-            //   //           index: index,
-            //   //           child: widgetPartList[index],
-            //   //         );
-            //   //       },
-            //   //     ),
-            //   //   ),
-            //   // ),
-            //
-            // ],
           ),
         ),
       ),
-      // bottomNavigationBar: bottomAppBar(context, necessaryPadding),
     );
   }
-}
-
-Widget bottomAppBar(BuildContext context, double necessaryPadding) {
-  return Container(
-    height: 50,
-    color: Colors.black.withOpacity(.4),
-    child: Center(
-      child: Text(
-        'device:${getDevice(
-          Size(
-            MediaQuery.sizeOf(context).width,
-            MediaQuery.sizeOf(context).height,
-          ),
-        )} | witdh:${MediaQuery.sizeOf(context).width} | height:${MediaQuery.sizeOf(context).height} | padding:$necessaryPadding',
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 15,
-        ),
-      ),
-    ),
-  );
 }

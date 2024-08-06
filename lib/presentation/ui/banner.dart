@@ -8,7 +8,6 @@ import '../../core/responsibility/responsive_behavior.dart';
 List<String> bannerTextList = [
   for (var i = 0; i < 5; i++) ...[
     'Flutter developer',
-    'it student',
     'designer',
     'OSINT Analyst',
     'freelancer',
@@ -31,7 +30,6 @@ class BannerWidget extends StatelessWidget {
       ),
     );
     return SizedBox(
-      // color: Colors.grey.withOpacity(.2),
       width: double.infinity,
       height: ResponsiveSize.number(
         context: context,

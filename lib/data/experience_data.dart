@@ -4,10 +4,19 @@ import 'image_assets.dart';
 List<ExpsModel> experienceList = [
   ExpsModel(
     isActive: true,
+    institut: "INNOVITA",
+    location: 'Amboditsiry',
+    title: "Flutter Developer",
+    date: "Now",
+    projects: [],
+    urlImage: imageAsset.freelance,
+  ),
+  ExpsModel(
+    isActive: true,
     institut: "Freelance",
     location: 'Remote',
     title: "Flutter Developer",
-    date: "${DateTime.now().year}",
+    date: "2024",
     projects: [
       ProjectDescriptionModel(
         title: "Dating App",

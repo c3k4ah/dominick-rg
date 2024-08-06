@@ -57,7 +57,7 @@ class _HackathonPartState extends State<HackathonPart> {
       desktop: 150,
       largeDesktop: 70,
     );
-    //TODO: Change the height of the container in Tablet !!
+
     final double containerHeight = ResponsiveSize.number(
       context: context,
       mobile: 700,
@@ -73,10 +73,6 @@ class _HackathonPartState extends State<HackathonPart> {
       width: double.infinity,
       child: Column(
         children: [
-          // const BigTitleWidget(
-          //   title: "HACKATHONS",
-          //   subtitle: "Mes récompenses et succès obtenus lors des Hackathons.",
-          // ),
           Expanded(
             flex: 5,
             child: Stack(
@@ -204,12 +200,6 @@ class _HackathonPartState extends State<HackathonPart> {
     return SizedBox(
       width: double.infinity,
       height: 100,
-      // decoration: BoxDecoration(
-      //   image: DecorationImage(
-      //     fit: BoxFit.fitHeight,
-      //     image: ExactAssetImage(awardsList[_selectedPhoto].institutLogo),
-      //   ),
-      // ),
       child: Center(
         child: ImageWidgetPlaceholder(
           fit: BoxFit.fitHeight,
@@ -269,10 +259,6 @@ class _HackathonPartState extends State<HackathonPart> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
             border: Border.all(width: 5, color: Colors.white),
-            // image: DecorationImage(
-            //   fit: BoxFit.cover,
-            //   image: ExactAssetImage(awardsList[_selectedPhoto].urlImage),
-            // ),
           ),
           height: double.infinity,
           child: ClipRRect(
@@ -332,10 +318,6 @@ class _HackathonPartState extends State<HackathonPart> {
                 border: index == _selectedPhoto
                     ? Border.all(width: 5, color: primaryColor)
                     : null,
-                // image: DecorationImage(
-                //   fit: BoxFit.cover,
-                //   image: ExactAssetImage(palmares.urlImage),
-                // ),
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
@@ -434,7 +416,6 @@ class _HackathonPartMobileState extends State<HackathonPartMobile>
 
   @override
   Widget build(BuildContext context) {
-    // int selectedPhoto = 0;
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: ResponsiveSize.number(
@@ -455,7 +436,6 @@ class _HackathonPartMobileState extends State<HackathonPartMobile>
         largeDesktop: 950,
       ),
       width: double.infinity,
-      // color: Colors.amber,
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -489,14 +469,6 @@ class _HackathonPartMobileState extends State<HackathonPartMobile>
                 SizedBox(
                   width: double.infinity,
                   height: 80,
-                  // decoration: BoxDecoration(
-                  //   image: DecorationImage(
-                  //     fit: BoxFit.fitHeight,
-                  //     image: ExactAssetImage(
-                  //       awardsList[selectedItem].institutLogo,
-                  //     ),
-                  //   ),
-                  // ),
                   child: Center(
                     child: ImageWidgetPlaceholder(
                       fit: BoxFit.fitHeight,
@@ -556,7 +528,6 @@ class _HackathonPartMobileState extends State<HackathonPartMobile>
           SizedBox(
             height: 130,
             width: double.infinity,
-            // color: Colors.red.withOpacity(.4),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -45,5 +45,4 @@ class ImageAssets {
       '${directory}images/hackathon_devfest_2022_1er_place.jpg';
   String get hackathonZahaGeek =>
       '${directory}images/hackathon_zahageek_2023.jpg';
-  String get defaultImage => '${directory}images/default_image.webp';
 }

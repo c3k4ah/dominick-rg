@@ -15,16 +15,8 @@ class ExperienceTimeline extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ResponsiveSize.number(
-      context: context,
-      mobile: 250,
-      mobileLarge: 350,
-      tablet: 260,
-      desktop: 200,
-      largeDesktop: 310,
-    );
     return SizedBox(
-      height: 4.5 *
+      height: (experienceList.length + 0.5) *
           ResponsiveSize.number(
             context: context,
             mobile: 250,
@@ -42,7 +34,7 @@ class ExperienceTimeline extends StatelessWidget {
                 "My professional experience, gained through working with various companies, has been invaluable.",
           ),
           SizedBox(
-            height: 4 *
+            height: experienceList.length *
                 ResponsiveSize.number(
                   context: context,
                   mobile: 250,
@@ -195,7 +187,6 @@ class _TimelineStepsChild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.amber,
       height: ResponsiveSize.number(
         context: context,
         mobile: 250,

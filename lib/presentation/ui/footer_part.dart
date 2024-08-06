@@ -81,7 +81,8 @@ class FooterPart extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            '© ${DateTime.now().year} Dominick R.G',
+            '© 2024 - Dominick Randriamanantena Grégoire',
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: ResponsiveSize.number(
                 context: context,

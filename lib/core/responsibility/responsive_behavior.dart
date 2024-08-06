@@ -126,16 +126,3 @@ double getNecessaryPadding({
   return padding;
 }
 
-String getDevice(Size size) {
-  if (size.width >= 1700) {
-    return 'largeDesktop';
-  } else if (size.width >= 1024) {
-    return 'desktop';
-  } else if (size.width >= 700) {
-    return 'tablet';
-  } else if (size.width >= 500) {
-    return 'mobileLarge';
-  } else {
-    return 'mobile';
-  }
-}
